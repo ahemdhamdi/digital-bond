@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Angular CLI temporary files
+.angular/
+
+# Production build
+dist/
+
+# OS / IDE files
+.DS_Store
+Thumbs.db
