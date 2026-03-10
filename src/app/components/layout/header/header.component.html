@@ -1,0 +1,24 @@
+  <nav class="navbar" [ngClass]="{ 'scrolled': isScrolled }">
+    <div class="nav-container">
+      <div class="logo">
+        <a routerLink="/home">
+          <img src="./logo/logo.webp" alt="Logo" />
+        </a>
+      </div>
+
+      <nav class="nav-links" [ngClass]="{ 'active': isMobileMenu }">
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <a routerLink="#" routerLinkActive="active">About</a>
+        <a routerLink="#" routerLinkActive="active">Services</a>
+        <a routerLink="#" routerLinkActive="active">Reviews</a>
+        <a routerLink="/posts" routerLinkActive="active">Contact</a>
+      </nav>
+
+      <div class="menu-toggle" [ngClass]="{ 'active': isMobileMenu }" (click)="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+

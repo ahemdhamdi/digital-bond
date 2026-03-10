@@ -1,0 +1,13 @@
+<div class="grid-bg"></div>
+<div class="gradient-overlay"></div>
+<div class="scanlines"></div>
+<div class="shapes-container">
+  <div class="shape shape-circle"></div>
+  <div class="shape shape-triangle"></div>
+  <div class="shape shape-square"></div>
+</div>
+<ngx-particles
+  [id]="id"
+  [options]="particlesOptions"
+  (particlesLoaded)="particlesLoaded($event)"
+></ngx-particles>

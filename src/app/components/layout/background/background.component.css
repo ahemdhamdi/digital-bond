@@ -1,0 +1,129 @@
+.grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(
+      circle at 25% 25%,
+      transparent 2%,
+      rgba(255, 94, 0, 0.03) 2%,
+      rgba(255, 94, 0, 0.03) 3%,
+      transparent 3%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      transparent 2%,
+      rgba(0, 178, 255, 0.03) 2%,
+      rgba(0, 178, 255, 0.03) 3%,
+      transparent 3%
+    );
+  background-size: 80px 80px;
+  animation: grid-move 30s linear infinite;
+  z-index: -2;
+}
+
+.gradient-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(255, 94, 0, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(0, 178, 255, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  z-index: -1;
+  animation: gradient-shift 10s ease-in-out infinite;
+}
+
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(transparent 50%, rgba(255, 94, 0, 0.01) 50%);
+  background-size: 100% 4px;
+  animation: scanlines 8s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.shapes-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.shape-circle {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 94, 0);
+    border-image: initial;
+    border-radius: 50%;
+    animation: 20s ease-in-out 0s infinite normal none running float-rotate;
+}
+
+.shape-triangle {
+    width: 0px;
+    height: 0px;
+    top: 60%;
+    right: 15%;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 173px solid rgba(0, 178, 255, 0.2);
+    animation: 25s ease-in-out 0s infinite reverse none running float-rotate;
+}
+
+.shape-square {
+    width: 150px;
+    height: 150px;
+    transform: rotate(45deg);
+    bottom: 20%;
+    left: 20%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 178, 255);
+    border-image: initial;
+    animation: 22s ease-in-out 0s infinite normal none running float-rotate;
+}
+.shape {
+    position: absolute;
+    opacity: 0.1;
+}
+
+
+@keyframes float-rotate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: translateY(-30px) rotate(90deg) scale(1.1);
+  }
+
+  50% {
+    transform: translateY(20px) rotate(180deg) scale(0.9);
+  }
+
+  75% {
+    transform: translateY(-10px) rotate(270deg) scale(1.05);
+  }
+}

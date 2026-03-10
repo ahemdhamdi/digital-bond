@@ -1,0 +1,32 @@
+<section class="testimonial-section">
+  <div class="section-header">
+    <h2>What Our Clients Say</h2>
+  </div>
+
+  <div class="testimonial">
+    @if (reviews) {
+      @for (testimonial of reviews; track testimonial.id) {
+        <div class="testimonial-item">
+          <div class="testimonial-image">
+            <img
+              src="./icons/user-icon.png"
+              alt="Client"
+            />
+          </div>
+
+          <div class="testimonial-content">
+            <div class="rating">
+              <div class="stars">★★★★★</div>
+              <span class="rating-number">{{ testimonial.rating }}</span>
+            </div>
+
+            <p class="message">“{{ testimonial.message | trancate: 50 }}”</p>
+
+            <h4 class="client-name">{{ testimonial.name }}</h4>
+            <span class="client-role">{{ testimonial.designation }}</span>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</section>

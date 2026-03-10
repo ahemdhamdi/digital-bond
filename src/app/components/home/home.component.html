@@ -1,0 +1,25 @@
+<section class="hero">
+  <div class="hero-content">
+    <div class="text-rotator">
+      <div class="text-set">
+        <h1 class="glitch-text">
+          @for (char of chars; let i = $index; track i) {
+            <span
+              class="char"
+              [class.out]="out"
+              [style.animationDelay]="i * 0.04 + 's'"
+            >
+              {{ char === " " ? "\u00A0" : char }}
+            </span>
+          }
+        </h1>
+
+        <p class="subtitle">Go Beyond The Limit With Digital Marketing</p>
+      </div>
+    </div>
+  </div>
+  <div class="btn-container">
+        <a class="btn btn-primary" routerLink="/news">Get Started</a>
+        <a class="btn btn-secondary" routerLink="/news">See More</a>
+  </div>
+</section>
